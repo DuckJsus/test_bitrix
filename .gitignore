@@ -1,1 +1,5 @@
 /.vscode
+bitrix/cache/s1/bitrix/news.list/06f/11/11a5f7dbac92ae2b479c7eac23626b32.php
+bitrix/components/bitrix/news/component.php
+bitrix/components/bitrix/news/templates/.default/detail.php
+bitrix/components/bitrix/news/templates/.default/news.php
