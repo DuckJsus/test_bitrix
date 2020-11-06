@@ -12,16 +12,6 @@ if(!$arResult["NavShowAlways"])
 }
 ?>
 
-<div class="review-pagination-block">
-	<div class="review-pagination-top">
-		<a class="review-pagination-prew-page" href="#">Предыдущая</a><a class="review-pagination-next-page" href="#">Следующая</a>
-	</div>
-	<div class="review-pagination">
-		<a class="review-pagination-link" href="#">1</a><a class="review-pagination-link" href="#">2</a><a class="review-pagination-link" href="#">3</a><a class="review-pagination-link" href="#">4</a><a class="review-pagination-link" href="#">5</a><a class="review-pagination-link" href="#">6</a><span class="review-pagination-link review-pagination-link-active" href="#">7</span><a class="review-pagination-link" href="#">8</a><a class="review-pagination-link" href="#">9</a><a class="review-pagination-link" href="#">10</a>
-	</div>
-</div>
-
-<div class="review-pagination-block">
 <?
 $strNavQueryString = ($arResult["NavQueryString"] != "" ? $arResult["NavQueryString"]."&amp;" : "");
 $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["NavQueryString"] : "");
@@ -68,11 +58,9 @@ if($arResult["bDescPageNumbering"] === true)
 	}
 	?>
 		<div class="review-pagination-top">
-			<span class="arrow">&larr;</span><span class="ctrl"> ctrl</span>&nbsp;<?if ($bPrevDisabled):?><span class="review-pagination-prew-page"><?=GetMessage("nav_prev")?></span><?else:?><a href="<?=$sPrevHref;?>" id="<?=$ClientID?>_previous_page" class="review-pagination-prew-page"><?=GetMessage("nav_prev")?></a><?endif;?>&nbsp;<?if ($bNextDisabled):?><span class="review-pagination-next-page" ><?=GetMessage("nav_next")?></span><?else:?><a href="<?=$sNextHref;?>" id="<?=$ClientID?>_next_page" class="review-pagination-next-page"><?=GetMessage("nav_next")?></a><?endif;?>&nbsp;<span class="ctrl">ctrl </span><span class="arrow">&rarr;</span>
+			<?if ($bPrevDisabled):?><span class="review-pagination-prew-page"><?=GetMessage("nav_prev")?></span><?else:?><a href="<?=$sPrevHref;?>" id="<?=$ClientID?>_previous_page" class="review-pagination-prew-page"><?=GetMessage("nav_prev")?></a><?endif;?>&nbsp;<?if ($bNextDisabled):?><span class="review-pagination-next-page" ><?=GetMessage("nav_next")?></span><?else:?><a href="<?=$sNextHref;?>" id="<?=$ClientID?>_next_page" class="review-pagination-next-page"><?=GetMessage("nav_next")?></a><?endif;?>
 		</div>
 
-		<!--<div class="navigation-pages">
-			<span class="navigation-title"><?=GetMessage("pages")?></span>-->
 	<?
 	$bFirst = true;
 	$bPoints = false;
@@ -146,7 +134,7 @@ else
 	}
 	?>
 		<div class="review-pagination-top">
-			<span class="arrow">&larr;</span><span class="ctrl"> ctrl</span>&nbsp;<?if ($bPrevDisabled):?><span class="review-pagination-prew-page"><?=GetMessage("nav_prev")?></span><?else:?><a href="<?=$sPrevHref;?>" id="<?=$ClientID?>_previous_page" class="review-pagination-prew-page"><?=GetMessage("nav_prev")?></a><?endif;?>&nbsp;<?if ($bNextDisabled):?><span class="review-pagination-next-page"><?=GetMessage("nav_next")?></span><?else:?><a href="<?=$sNextHref;?>" id="<?=$ClientID?>_next_page" class="review-pagination-next-page"><?=GetMessage("nav_next")?></a><?endif;?>&nbsp;<span class="ctrl">ctrl </span><span class="arrow">&rarr;</span>
+			<?if ($bPrevDisabled):?><span class="review-pagination-prew-page"><?=GetMessage("nav_prev")?></span><?else:?><a href="<?=$sPrevHref;?>" id="<?=$ClientID?>_previous_page" class="review-pagination-prew-page"><?=GetMessage("nav_prev")?></a><?endif;?>&nbsp;<?if ($bNextDisabled):?><span class="review-pagination-next-page"><?=GetMessage("nav_next")?></span><?else:?><a href="<?=$sNextHref;?>" id="<?=$ClientID?>_next_page" class="review-pagination-next-page"><?=GetMessage("nav_next")?></a><?endif;?>
 		</div>
 
 		<!-- <div class="navigation-pages">
@@ -161,7 +149,7 @@ else
 
 			if ($arResult["nStartPage"] == $arResult["NavPageNomer"]):
 	?>
-			<span class="nav-current-page"><?=$arResult["nStartPage"]?></span>
+			<span class="nav-current-page review-pagination"><?=$arResult["nStartPage"]?></span>
 	<?
 			elseif($arResult["nStartPage"] == 1 && $arResult["bSavePage"] == false):
 	?>
