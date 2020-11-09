@@ -80,13 +80,21 @@ $strAlt = (
 if ('Y' == $arParams['DISPLAY_NAME'])
 {
 ?>
-<div class="bx_item_title"><h1><span><?
+<div class="bx_item_title"><h1>
+	<span>
+	<?
 	echo (
 		isset($arResult["IPROPERTY_VALUES"]["ELEMENT_PAGE_TITLE"]) && $arResult["IPROPERTY_VALUES"]["ELEMENT_PAGE_TITLE"] != ''
 		? $arResult["IPROPERTY_VALUES"]["ELEMENT_PAGE_TITLE"]
 		: $arResult["NAME"]
-	); ?>
+	); 
+	?>
 </span></h1></div>
+<!--Рейтинг-->
+<?
+$APPLICATION->ShowViewContent('stars_rating'); 
+?>
+
 <?
 }
 reset($arResult['MORE_PHOTO']);
@@ -226,7 +234,10 @@ if ($useBrands || $useVoteRating)
 <?
 	if ($useVoteRating)
 	{
-		?><?$APPLICATION->IncludeComponent(
+		?>
+		 
+		<?$this->SetViewTarget('stars_rating');?> 
+		<?$APPLICATION->IncludeComponent(
 			"bitrix:iblock.vote",
 			"stars",
 			array(
@@ -243,7 +254,10 @@ if ($useBrands || $useVoteRating)
 			),
 			$component,
 			array("HIDE_ICONS" => "Y")
-		);?><?
+		);?>
+		<?$this->EndViewTarget();?> 
+		
+		<?
 	}
 	if ($useBrands)
 	{
