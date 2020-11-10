@@ -80,6 +80,7 @@ $strAlt = (
 if ('Y' == $arParams['DISPLAY_NAME'])
 {
 ?>
+
 <div class="bx_item_title"><h1><span><?
 	echo (
 		isset($arResult["IPROPERTY_VALUES"]["ELEMENT_PAGE_TITLE"]) && $arResult["IPROPERTY_VALUES"]["ELEMENT_PAGE_TITLE"] != ''
@@ -224,27 +225,7 @@ if ($useBrands || $useVoteRating)
 ?>
 	<div class="bx_optionblock">
 <?
-	if ($useVoteRating)
-	{
-		?><?$APPLICATION->IncludeComponent(
-			"bitrix:iblock.vote",
-			"stars",
-			array(
-				"IBLOCK_TYPE" => $arParams['IBLOCK_TYPE'],
-				"IBLOCK_ID" => $arParams['IBLOCK_ID'],
-				"ELEMENT_ID" => $arResult['ID'],
-				"ELEMENT_CODE" => "",
-				"MAX_VOTE" => "5",
-				"VOTE_NAMES" => array("1", "2", "3", "4", "5"),
-				"SET_STATUS_404" => "N",
-				"DISPLAY_AS_RATING" => $arParams['VOTE_DISPLAY_AS_RATING'],
-				"CACHE_TYPE" => $arParams['CACHE_TYPE'],
-				"CACHE_TIME" => $arParams['CACHE_TIME']
-			),
-			$component,
-			array("HIDE_ICONS" => "Y")
-		);?><?
-	}
+	
 	if ($useBrands)
 	{
 		?><?$APPLICATION->IncludeComponent("bitrix:catalog.brandblock", ".default", array(
