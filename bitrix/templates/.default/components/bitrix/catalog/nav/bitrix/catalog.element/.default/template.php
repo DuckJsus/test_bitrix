@@ -80,6 +80,12 @@ $strAlt = (
 if ('Y' == $arParams['DISPLAY_NAME'])
 {
 ?>
+
+<!--Рейтинг-->
+<?
+	//$APPLICATION->ShowViewContent('stars_rating'); 
+?>
+
 <div class="bx_item_title"><h1>
 	<span>
 	<?
@@ -90,11 +96,6 @@ if ('Y' == $arParams['DISPLAY_NAME'])
 	); 
 	?>
 </span></h1></div>
-<!--Рейтинг-->
-<?
-$APPLICATION->ShowViewContent('stars_rating'); 
-?>
-
 <?
 }
 reset($arResult['MORE_PHOTO']);
