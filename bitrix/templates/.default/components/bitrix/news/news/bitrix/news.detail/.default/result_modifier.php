@@ -9,6 +9,6 @@ if($arResult["PROPERTIES"]["AUTHOR"]["VALUE"]){
 
     $cp->setResultCacheKeys(array("AUTHOR"));
 }
-$arResult["DETAIL_TEXT_50"]=substr($arResult["DETAIL_TEXT"],0,50)."...";
+$arResult["DETAIL_TEXT_50"]=mb_substr($arResult["DETAIL_TEXT"],0,50)."...";
 $cp->setResultCacheKeys(array("DETAIL_TEXT_50"));
 ?>
