@@ -12,12 +12,17 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+
 <div class="main_post">
-<div class="ps_content">
-<?if (is_array($arResult["DETAIL_PICTURE"])):?>
-<img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" align="left" alt="<?=$arResult["NAME"]?>"/> 
-<?endif;?>
-<?echo $arResult["DETAIL_TEXT"];?>
-<div style="clear:both"></div>	
-</div>
+    <div class="ps_content">
+        <?if (is_array($arResult["DETAIL_PICTURE"])):?>
+            <img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" align="left" alt="<?=$arResult["NAME"]?>"/> 
+        <?endif;?>
+        <?echo $arResult["DETAIL_TEXT"];?>
+
+        <?if($arResult["AUTHOR"]):?>
+            Автор: <?=$arResult["AUTHOR"][0]?>
+        <?endif?>
+        <div style="clear:both"></div>	
+    </div>
 </div>
